@@ -31,15 +31,15 @@
    sudo pacman -U download-guardian-<version>-x86_64.pkg.tar.zst
    ```
 
-### 2. From AUR (future)
+### 2. From AUR
 
-Once available in AUR, you can install via an AUR helper:
+Install via an AUR helper:
 
 ```
 paru -S download-guardian
 ```
 
-*(Note: not yet uploaded to AUR.)*
+*(AUR link: [https://aur.archlinux.org/packages/download-guardian](https://aur.archlinux.org/packages/download-guardian))*
 
 ### 3. Build manually
 
@@ -102,7 +102,7 @@ sudo loginctl enable-linger $(whoami)
   * **Exit code 0** → Clean
   * **Exit code 1** → Infected (with malware name)
   * **Exit code >1** → Error
-* All events and scan outputs append to `~/clamav_notifier.log`.
+* All events and scan outputs append to `~/download-guardian.log`.
 
 ---
 
@@ -125,7 +125,7 @@ download-guardian/
 
 * **Directory to watch**: Change `WATCH_DIR="$HOME/Downloads"` at the top of `download-guardian-scan.sh` if needed.
 * **ClamAV options**: Modify `CLAMSCAN_OPTS="--infected --recursive --remove=no"` for custom flags.
-* **Log file**: Outputs to `~/clamav_notifier.log`, editable in the script.
+* **Log file**: Outputs to `~/download-guardian.log`, editable in the script.
 
 ---
 
@@ -145,7 +145,7 @@ download-guardian/
 3. (Optional) Delete the log:
 
    ```
-   rm -f ~/clamav_notifier.log
+   rm -f ~/download-guardian.log
    ```
 
 ---
