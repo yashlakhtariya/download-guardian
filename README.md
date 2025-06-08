@@ -1,8 +1,10 @@
 # Download Guardian
 
 **Download Guardian** is a lightweight user‐level service for Arch Linux (and derivatives) that watches your `~/Downloads` folder and prompts to scan any new file or folder with ClamAV.
-
----
+ 
+<div align=center>
+ <img src="https://github.com/user-attachments/assets/2052687f-ff03-4328-af2c-7dba228975fb" height="250"> 
+</div>
 
 ## Features
 
@@ -89,20 +91,6 @@ paru -S download-guardian
 ```
 sudo loginctl enable-linger $(whoami)
 ```
-
----
-
-## How It Works
-
-* When a file/folder is created, closed, or moved into `~/Downloads`, the script (`download-guardian-scan.sh`) triggers.
-* A Zenity dialog asks if you want to scan the new item.
-* If **No**, nothing happens.
-* If **Yes**, a “Scanning…” notification appears, `clamscan --infected --recursive --remove=no` runs, then you get a final notification:
-
-  * **Exit code 0** → Clean
-  * **Exit code 1** → Infected (with malware name)
-  * **Exit code >1** → Error
-* All events and scan outputs append to `~/download-guardian.log`.
 
 ---
 
